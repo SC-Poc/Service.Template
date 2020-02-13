@@ -10,15 +10,9 @@ namespace Swisschain.Service.Example.Client.Common
 
         public BaseGrpcClient(string serverGrpcUrl)
         {
-            var httpClientHandler = new HttpClientHandler
-            {
-                ServerCertificateCustomValidationCallback =
-                    HttpClientHandler.DangerousAcceptAnyServerCertificateValidator
-            };
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
 
-            var httpClient = new HttpClient(httpClientHandler);
-
-            Channel = GrpcChannel.ForAddress(serverGrpcUrl, new GrpcChannelOptions { HttpClient = httpClient });
+            Channel = GrpcChannel.ForAddress(serverGrpcUrl);
         }
 
         public void Dispose()
