@@ -31,7 +31,6 @@ namespace Swisschain.Service.Example.Common
                         options.Listen(IPAddress.Any, 5001, listenOptions =>
                         {
                             listenOptions.Protocols = HttpProtocols.Http2;
-                            listenOptions.UseHttps();
                         });
                     });
                 });
