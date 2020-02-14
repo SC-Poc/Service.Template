@@ -9,7 +9,8 @@ namespace Swisschain.Service.Example.Common
 {
     public static class HostBuilderTemplate
     {
-        public static IHostBuilder SwisschainService<TStartup>(this IHostBuilder host) where TStartup : class
+        public static IHostBuilder SwisschainService<TStartup>(this IHostBuilder host, int restPort = 5000, int grpcPort = 5001)
+            where TStartup : class
         {
             return host
                 .UseServiceProviderFactory(new AutofacServiceProviderFactory())
@@ -23,12 +24,12 @@ namespace Swisschain.Service.Example.Common
 
                     webBuilder.ConfigureKestrel(options =>
                     {
-                        options.Listen(IPAddress.Any, 5000, listenOptions =>
+                        options.Listen(IPAddress.Any, restPort, listenOptions =>
                         {
                             listenOptions.Protocols = HttpProtocols.Http1;
                         });
 
-                        options.Listen(IPAddress.Any, 5001, listenOptions =>
+                        options.Listen(IPAddress.Any, grpcPort, listenOptions =>
                         {
                             listenOptions.Protocols = HttpProtocols.Http2;
                         });

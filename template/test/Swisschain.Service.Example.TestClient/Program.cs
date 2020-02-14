@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Threading;
+using System.Threading.Tasks;
 using Swisschain.Service.Example.Client;
 using Swisschain.Service.Example.Protos;
 
@@ -8,7 +9,7 @@ namespace Swisschain.Service.Example.TestClient
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Press enter to start");
             Console.ReadLine();
@@ -20,7 +21,7 @@ namespace Swisschain.Service.Example.TestClient
                 {
                     var sw = new Stopwatch();
                     sw.Start();
-                    var result = client.Monitoring.IsAlive(new IsAliveRequest());
+                    var result = await client.Monitoring.IsAliveAsync(new IsAliveRequest());
                     sw.Stop();
                     Console.WriteLine($"{result.Name}  {sw.ElapsedMilliseconds} ms");
                 }

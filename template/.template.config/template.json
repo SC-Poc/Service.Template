@@ -1,0 +1,19 @@
+{
+  "author": "Swisschain",
+  "classifications": [ "SwisschainService" ],
+  "name": "SwisschainService",
+  "identity": "SwisschainService",
+  "shortName": "swissservice",
+  "preferNameDirectory": "true",
+  "tags": {
+    "language": "C#"
+  },
+  "sourceName": "Example",
+  "symbols": {
+    "renameDockerImageName": {
+      "type": "parameter",
+      "defaultValue": "service-example",
+      "replaces": "service-example"
+    }
+  }
+}
