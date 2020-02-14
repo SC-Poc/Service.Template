@@ -7,16 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. host", "10. host", "{2A
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09. client", "09. client", "{655225E4-2F4C-4D07-82FB-7B4947EF5A7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swisschain.Service.Example", "src\Swisschain.Service.Example\Swisschain.Service.Example.csproj", "{643A95FF-6718-4FF0-8A9C-BBCF9C556B0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swisschain.Service.Example", "src\Swisschain.Service.Example\Swisschain.Service.Example.csproj", "{643A95FF-6718-4FF0-8A9C-BBCF9C556B0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swisschain.Service.Example.Client", "src\Swisschain.Service.Example.Client\Swisschain.Service.Example.Client.csproj", "{AF013F3F-E55B-45B3-B873-41B9AA83382C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swisschain.Service.Example.Client", "src\Swisschain.Service.Example.Client\Swisschain.Service.Example.Client.csproj", "{AF013F3F-E55B-45B3-B873-41B9AA83382C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{85EB7950-61F2-4B83-9F3E-F74ECCE0D3C8}"
 	ProjectSection(SolutionItems) = preProject
+		.github\workflows\dotnetcore.yml = .github\workflows\dotnetcore.yml
 		format.appsettings.json = format.appsettings.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swisschain.Service.Example.TestClient", "test\Swisschain.Service.Example.TestClient\Swisschain.Service.Example.TestClient.csproj", "{792D6629-63BE-4C93-A960-1C18FA7ADA7A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Swisschain.Service.Example.TestClient", "test\Swisschain.Service.Example.TestClient\Swisschain.Service.Example.TestClient.csproj", "{792D6629-63BE-4C93-A960-1C18FA7ADA7A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08. Test", "08. Test", "{7F3DBAA2-139B-401D-A33F-1409A9BB4DE8}"
 EndProject
