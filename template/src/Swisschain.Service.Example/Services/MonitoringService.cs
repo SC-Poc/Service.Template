@@ -1,7 +1,7 @@
 ﻿using System.Reflection;
 using System.Threading.Tasks;
 using Grpc.Core;
-using Swisschain.Service.Example.Common;
+using Swisschain.Sdk.Server.Common;
 using Swisschain.Service.Example.Protos;
 
 namespace Swisschain.Service.Example.Services

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Swisschain.Service.Example.Common;
+using Swisschain.Sdk.Server.Common;
 
 namespace Swisschain.Service.Example
 {

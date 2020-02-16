@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
-using Swisschain.Service.Example.Common;
+using Swisschain.Sdk.Server.Common;
 
 namespace Swisschain.Service.Example.Controllers.IsAlive
 {
