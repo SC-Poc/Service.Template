@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.1</TargetFramework>
+    <AssemblyName>Service.Example.Client</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -18,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\Swisschain.Service.Example\Protos\isalive.proto">
+    <Protobuf Include="..\Service.Example\Protos\isalive.proto">
       <Link>Protos\isalive.proto</Link>
     </Protobuf>
   </ItemGroup>

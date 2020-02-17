@@ -4,7 +4,7 @@ using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Swisschain.Sdk.Server.Common;
 
-namespace Swisschain.Service.Example.Controllers.IsAlive
+namespace Service.Example.Controllers.IsAlive
 {
     [ApiController]
     [Route("api/[controller]")]

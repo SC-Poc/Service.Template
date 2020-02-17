@@ -1,6 +1,6 @@
-﻿using Swisschain.Service.Example.Protos;
+﻿using Service.Example.Protos;
 
-namespace Swisschain.Service.Example.Client
+namespace Service.Example.Client
 {
     public interface IExampleClient
     {

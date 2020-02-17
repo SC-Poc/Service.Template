@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Service.Example</AssemblyName>
+    <RootNamespace>Service.Example</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

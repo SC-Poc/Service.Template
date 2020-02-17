@@ -2,9 +2,9 @@
 using System.Threading.Tasks;
 using Grpc.Core;
 using Swisschain.Sdk.Server.Common;
-using Swisschain.Service.Example.Protos;
+using Service.Example.Protos;
 
-namespace Swisschain.Service.Example.Services
+namespace Service.Example.Services
 {
     public class MonitoringService : Monitoring.MonitoringBase
     {

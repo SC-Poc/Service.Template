@@ -2,7 +2,7 @@
 using System.Net.Http;
 using Grpc.Net.Client;
 
-namespace Swisschain.Service.Example.Client.Common
+namespace Service.Example.Client.Common
 {
     public class BaseGrpcClient : IDisposable
     {

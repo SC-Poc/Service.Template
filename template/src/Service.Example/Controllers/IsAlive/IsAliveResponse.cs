@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Swisschain.Service.Example.Controllers.IsAlive
+namespace Service.Example.Controllers.IsAlive
 {
     public class IsAliveResponse
     {

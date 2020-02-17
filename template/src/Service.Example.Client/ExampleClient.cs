@@ -1,7 +1,7 @@
-﻿using Swisschain.Service.Example.Client.Common;
-using Swisschain.Service.Example.Protos;
+﻿using Service.Example.Client.Common;
+using Service.Example.Protos;
 
-namespace Swisschain.Service.Example.Client
+namespace Service.Example.Client
 {
     public class ExampleClient : BaseGrpcClient, IExampleClient
     {

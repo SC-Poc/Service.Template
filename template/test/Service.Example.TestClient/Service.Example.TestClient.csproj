@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Swisschain.Service.Example.Client\Swisschain.Service.Example.Client.csproj" />
+    <ProjectReference Include="..\..\src\Service.Example.Client\Service.Example.Client.csproj" />
   </ItemGroup>
 
 </Project>

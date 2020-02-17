@@ -6,7 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Swisschain.Sdk.Server.Common;
 
-namespace Swisschain.Service.Example
+namespace Service.Example
 {
     public class Program
     {

@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Swisschain.Service.Example.Client;
-using Swisschain.Service.Example.Protos;
+using Service.Example.Client;
+using Service.Example.Protos;
 
-namespace Swisschain.Service.Example.TestClient
+namespace Service.Example.TestClient
 {
     class Program
     {
