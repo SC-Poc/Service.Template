@@ -3,6 +3,10 @@
     "renameDockerImageName": {
       "longName": "renameDockerImageName",
       "shortName": "di"
+    },
+    "projectName": {
+      "longName": "project",
+      "shortName": "p"
     }
   }
 }

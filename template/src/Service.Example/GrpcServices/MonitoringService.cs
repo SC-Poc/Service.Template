@@ -1,17 +1,15 @@
-﻿using System.Reflection;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Grpc.Core;
-using Swisschain.Sdk.Server.Common;
 using Service.Example.Protos;
+using Swisschain.Sdk.Server.Common;
 
-namespace Service.Example.Services
+namespace Service.Example.GrpcServices
 {
     public class MonitoringService : Monitoring.MonitoringBase
     {
         public override Task<IsAliveResponce> IsAlive(IsAliveRequest request, ServerCallContext context)
         {
-            var name = Assembly.GetEntryAssembly()?.GetName();
-            var result = new IsAliveResponce()
+            var result = new IsAliveResponce
             {
                 Name = ApplicationInformation.AppName,
                 Version = ApplicationInformation.AppVersion,

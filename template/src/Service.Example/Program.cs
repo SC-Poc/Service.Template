@@ -1,10 +1,8 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Swisschain.Sdk.Server.Common;
+using Swisschain.Sdk.Server.Loggin;
 
 namespace Service.Example
 {
@@ -12,11 +10,42 @@ namespace Service.Example
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            using (var loggerFactory = LogConfigurator.Configure("Swisschain-Project-Name", ApplicationEnvironment.Config["SeqUrl"]))
+            {
+                var logger = loggerFactory.CreateLogger<Program>();
+
+                try
+                {
+                    logger.LogInformation("Application is being started");
+
+                    CreateHostBuilder(loggerFactory).Build().Run();
+
+                    logger.LogInformation("Application has been stopped");
+                }
+                catch (Exception ex)
+                {
+                    logger.LogCritical(ex, "Application has been terminated unexpectedly");
+                }
+            }
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .SwisschainService<Startup>();
+        private static IHostBuilder CreateHostBuilder(ILoggerFactory loggerFactory) =>
+            new HostBuilder()
+                .SwisschainService<Startup>(options =>
+                {
+                    options.UseLoggerFactory(loggerFactory);
+
+                    var remoteSettingsUrl = ApplicationEnvironment.Config["RemoteSettingsUrl"];
+
+                    if (remoteSettingsUrl != default)
+                    {
+                        options.WithWebJsonConfigurationSource(webJsonOptions =>
+                        {
+                            webJsonOptions.Url = remoteSettingsUrl;
+                            webJsonOptions.IsOptional = ApplicationEnvironment.IsDevelopment;
+                            webJsonOptions.Version = ApplicationInformation.AppVersion;
+                        });
+                    }
+                });
     }
 }

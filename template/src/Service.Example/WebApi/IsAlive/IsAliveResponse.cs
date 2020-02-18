@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Service.Example.Controllers.IsAlive
+namespace Service.Example.WebApi.IsAlive
 {
     public class IsAliveResponse
     {
@@ -15,6 +15,9 @@ namespace Service.Example.Controllers.IsAlive
         [JsonPropertyName("env")]
         public string Env { get; set; }
 
+        [JsonPropertyName("host")]
+        public string HostName { get; set; }
+
         [JsonPropertyName("isDebug")]
         public bool IsDebug { get; set; }
 
@@ -22,9 +25,9 @@ namespace Service.Example.Controllers.IsAlive
         public DateTime StartedAt { get; set; }
 
         [JsonPropertyName("issueIndicators")]
-        public List<IssueIndicator> IssueIndicators { get; set; }
+        public List<StateIndicator> StateIndicators { get; set; }
 
-        public class IssueIndicator
+        public class StateIndicator
         {
             [JsonPropertyName("type")]
             public string Type { get; set; }

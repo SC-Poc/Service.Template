@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
+﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Swisschain.Sdk.Server.Common;
 
-namespace Service.Example.Controllers.IsAlive
+namespace Service.Example.WebApi.IsAlive
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -13,12 +11,14 @@ namespace Service.Example.Controllers.IsAlive
         [HttpGet]
         public IsAliveResponse Get()
         {
-            var response = new IsAliveResponse()
+            var response = new IsAliveResponse
             {
                 Name = ApplicationInformation.AppName,
                 Version = ApplicationInformation.AppVersion,
                 StartedAt = ApplicationInformation.StartedAt,
-                IssueIndicators = new List<IsAliveResponse.IssueIndicator>()
+                Env = ApplicationEnvironment.Environment,
+                HostName = ApplicationEnvironment.HostName,
+                StateIndicators = new List<IsAliveResponse.StateIndicator>()
             };
 
             return response;

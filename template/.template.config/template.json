@@ -14,6 +14,19 @@
       "type": "parameter",
       "defaultValue": "service-example",
       "replaces": "service-example"
+    },
+    "projectName": {
+      "type": "parameter",
+      "replaces": "Swisschain-Project-Name",
+      "description": "Name of the Swisschain project to which the service belongs"
+    },
+    "clientSecretsId": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "user-secrets-id",
+      "parameters": {
+        "format":"N"
+      }
     }
   }
 }
