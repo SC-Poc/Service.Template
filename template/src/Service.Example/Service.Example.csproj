@@ -4,6 +4,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <AssemblyName>Service.Example</AssemblyName>
     <RootNamespace>Service.Example</RootNamespace>
+    <UserSecretsId>user-secrets-id</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -17,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Grpc.AspNetCore" Version="2.24.0" />
-    <PackageReference Include="Swisschain.Sdk.Server" Version="1.0.0" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.27.0" />
+    <PackageReference Include="Swisschain.Sdk.Server" Version="2.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +31,5 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-
 
 </Project>

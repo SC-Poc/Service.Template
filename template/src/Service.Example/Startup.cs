@@ -1,12 +1,13 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
+using Service.Example.Configuration;
+using Service.Example.GrpcServices;
 using Swisschain.Sdk.Server.Common;
-using Service.Example.Services;
 
 namespace Service.Example
 {
-    public class Startup : SwisschainStartup
+    public sealed class Startup : SwisschainStartup<AppConfig>
     {
         public Startup(IConfiguration configuration) : base(configuration)
         {
