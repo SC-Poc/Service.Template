@@ -66,5 +66,5 @@ TODO:
 |Variable|Required|Value|
 |-------|-------|-------|
 |RemoteSettingsUrl|no|URL address for getting confg content to override appsettings.json|
-|SeqUrl|yes|URL address for Seq server to keep logs|
+|SeqUrl|no|URL address for Seq server to keep logs|
 
