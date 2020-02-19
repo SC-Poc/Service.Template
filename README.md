@@ -50,7 +50,7 @@ Example of server and client you can see in solution:
 * [MonitoringService](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Service.Example/GrpcServices/MonitoringService.cs) server side
 * [TestClient](https://github.com/SC-Poc/Service.Template/blob/master/template/test/Service.Example.TestClient/Program.cs) client side
 
-Solution by default includes a project for client library: [<NAME>.Client](https://github.com/SC-Poc/Service.Template/tree/master/template/src/Service.Example.Client). You can build NuGet and use this library to simplify integration of other microservices with your application. And service and install the library in solution, register client in DI container with client interface and star use interface ... like it is an internal implementation
+Solution by default includes a project for client library: [NAME.Client](https://github.com/SC-Poc/Service.Template/tree/master/template/src/Service.Example.Client). You can build NuGet and use this library to simplify integration of other microservices with your application. Client Service install the library in solution, register client in DI container with client interface and star use interface ... like it is an internal implementation
 
 ### Use Githib Action as CI for build and deploy docker image
 Template solution includes pipelines to build, test and deploy solution artifacts.
