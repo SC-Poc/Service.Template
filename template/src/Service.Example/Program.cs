@@ -34,18 +34,7 @@ namespace Service.Example
                 .SwisschainService<Startup>(options =>
                 {
                     options.UseLoggerFactory(loggerFactory);
-
-                    var remoteSettingsUrl = ApplicationEnvironment.Config["RemoteSettingsUrl"];
-
-                    if (remoteSettingsUrl != default)
-                    {
-                        options.WithWebJsonConfigurationSource(webJsonOptions =>
-                        {
-                            webJsonOptions.Url = remoteSettingsUrl;
-                            webJsonOptions.IsOptional = ApplicationEnvironment.IsDevelopment;
-                            webJsonOptions.Version = ApplicationInformation.AppVersion;
-                        });
-                    }
+                    options.WithWebJsonConfigurationSource(ApplicationEnvironment.Config["RemoteSettingsUrl"]);
                 });
     }
 }
