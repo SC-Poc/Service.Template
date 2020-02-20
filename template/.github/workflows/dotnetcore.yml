@@ -1,4 +1,4 @@
-name: Continue integration for Example
+name: Continuous integration for Example
 
 on: [push]
 
