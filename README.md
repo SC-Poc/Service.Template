@@ -66,6 +66,6 @@ TODO:
 ### Environment variables used
 |Variable|Required|Value|
 |-------|-------|-------|
-|RemoteSettingsUrl|no|URL address for getting confg content to override appsettings.json|
+|RemoteSettingsUrl|no|URL address for getting confg content which can be overriden by `appsettings.json`|
 |SeqUrl|no|URL address for Seq server to keep logs|
 
