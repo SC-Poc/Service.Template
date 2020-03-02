@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text.Json.Serialization;
 
-namespace Service.Example.WebApi.Models.IsAlive
+namespace Example.WebApi.Models.IsAlive
 {
     public class IsAliveResponse
     {

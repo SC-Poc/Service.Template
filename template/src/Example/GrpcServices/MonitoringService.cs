@@ -3,7 +3,7 @@ using Grpc.Core;
 using Service.Example.Protos;
 using Swisschain.Sdk.Server.Common;
 
-namespace Service.Example.GrpcServices
+namespace Example.GrpcServices
 {
     public class MonitoringService : Monitoring.MonitoringBase
     {

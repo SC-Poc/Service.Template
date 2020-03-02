@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Net.Http;
 using Grpc.Net.Client;
 
-namespace Service.Example.Client.Common
+namespace Example.Client.Common
 {
     public class BaseGrpcClient : IDisposable
     {

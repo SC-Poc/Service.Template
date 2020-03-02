@@ -2,10 +2,10 @@
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
-using Service.Example.Client;
+using Example.Client;
 using Service.Example.Protos;
 
-namespace Service.Example.TestClient
+namespace Example.TestClient
 {
     class Program
     {

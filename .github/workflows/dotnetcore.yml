@@ -18,6 +18,6 @@ jobs:
     - name: Test
       run: dotnet test --configuration Release "template/Service.Example.sln"
     - name: Publish
-      run: dotnet publish ./template/src/Service.Example/Service.Example.csproj --output ./publish --configuration Release /p:AssemblyVersion=1.0.0
+      run: dotnet publish ./template/src/Example/Example.csproj --output ./publish --configuration Release /p:AssemblyVersion=1.0.0
     - name: Check dir
       run: ls ./publish

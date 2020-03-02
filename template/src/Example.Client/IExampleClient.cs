@@ -1,6 +1,6 @@
 ﻿using Service.Example.Protos;
 
-namespace Service.Example.Client
+namespace Example.Client
 {
     public interface IExampleClient
     {

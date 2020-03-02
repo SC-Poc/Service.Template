@@ -1,4 +1,4 @@
-﻿namespace Service.Example.Configuration
+﻿namespace Example.Configuration
 {
     public class AppConfig
     {

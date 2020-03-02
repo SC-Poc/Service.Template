@@ -1,7 +1,7 @@
-﻿using Service.Example.Client.Common;
+﻿using Example.Client.Common;
 using Service.Example.Protos;
 
-namespace Service.Example.Client
+namespace Example.Client
 {
     public class ExampleClient : BaseGrpcClient, IExampleClient
     {
