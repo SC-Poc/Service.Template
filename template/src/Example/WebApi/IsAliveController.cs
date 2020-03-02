@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
+using Example.WebApi.Models.IsAlive;
 using Microsoft.AspNetCore.Mvc;
-using Service.Example.WebApi.Models.IsAlive;
 using Swisschain.Sdk.Server.Common;
 
-namespace Service.Example.WebApi
+namespace Example.WebApi
 {
     [ApiController]
     [Route("api/[controller]")]

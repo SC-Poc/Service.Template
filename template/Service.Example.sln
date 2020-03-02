@@ -11,13 +11,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. S
 		format.appsettings.json = format.appsettings.json
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Test", "02. Test", "{7F3DBAA2-139B-401D-A33F-1409A9BB4DE8}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Tests", "02. Tests", "{7F3DBAA2-139B-401D-A33F-1409A9BB4DE8}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Example", "src\Service.Example\Service.Example.csproj", "{D9AE04E2-3801-499E-8E95-6F2B2B4BFB41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example", "src\Example\Example.csproj", "{D9AE04E2-3801-499E-8E95-6F2B2B4BFB41}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Example.Client", "src\Service.Example.Client\Service.Example.Client.csproj", "{9B71FE5F-2279-411C-9920-4159E3635E36}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Client", "src\Example.Client\Example.Client.csproj", "{9B71FE5F-2279-411C-9920-4159E3635E36}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.Example.TestClient", "test\Service.Example.TestClient\Service.Example.TestClient.csproj", "{E68690DB-606F-49CA-9BAB-DF5B5EA2E8F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.TestClient", "tests\Example.TestClient\Example.TestClient.csproj", "{E68690DB-606F-49CA-9BAB-DF5B5EA2E8F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

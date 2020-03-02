@@ -1,10 +1,10 @@
-using System;
+﻿using System;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Swisschain.Sdk.Server.Common;
 using Swisschain.Sdk.Server.Loggin;
 
-namespace Service.Example
+namespace Example
 {
     public class Program
     {
