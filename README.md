@@ -47,16 +47,18 @@ Template service by default ready to work with GRPC services and REst services. 
 
 By default application do not support SSL and HTTPS. Client for GRPS should use http ptotocol with out encription.
 Example of server and client you can see in solution: 
-* [MonitoringService](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Service.Example/GrpcServices/MonitoringService.cs) server side
-* [TestClient](https://github.com/SC-Poc/Service.Template/blob/master/template/test/Service.Example.TestClient/Program.cs) client side
+* [MonitoringService](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Example/GrpcServices/MonitoringService.cs) server side
+* [Client](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Example.Client/ExampleClient.cs) client side
+* [Console app](https://github.com/SC-Poc/Service.Template/blob/master/template/tests/Example.TestClient/Program.cs) usage example
 
-Solution by default includes a project for client library: [NAME.Client](https://github.com/SC-Poc/Service.Template/tree/master/template/src/Service.Example.Client). You can build NuGet and use this library to simplify integration of other microservices with your application. Client Service install the library in solution, register client in DI container with client interface and star use interface ... like it is an internal implementation
+Solution by default includes a project for client library: [NAME.Client](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Example.Client/). You can build NuGet and use this library to simplify integration of other microservices with your application. Client Service install the library in solution, register client in DI container with client interface and star use interface ... like it is an internal implementation
 
 ### Use Githib Action as CI for build and deploy docker image
 Template solution includes pipelines to build, test and deploy solution artifacts.
 You should only setup secret into your GitHub repository:
 * DOCKER_USERNAME - user name from [hub.docker.com](https://hub.docker.com/)
 * DOCKER_PASSWORD - password or API key from [hub.docker.com](https://hub.docker.com/)
+* NUGET_TOCKEN - access token to [nuget.org](https://www.nuget.org/) account
 
 TODO:
 * add CI for client nuget
