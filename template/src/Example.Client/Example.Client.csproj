@@ -6,7 +6,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Google.Protobuf" Version="3.11.3" />
+    <Compile Remove="Protos\**" />
+    <EmbeddedResource Remove="Protos\**" />
+    <None Remove="Protos\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.11.4" />
     <PackageReference Include="Grpc.Net.Client" Version="2.27.0" />
     <PackageReference Include="Grpc.Tools" Version="2.27.0">
       <PrivateAssets>all</PrivateAssets>
@@ -15,13 +21,24 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Protos\" />
+    <ProjectReference Include="..\Example.Contract\Example.Protos.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Protobuf Include="..\Example\Protos\isalive.proto">
-      <Link>Protos\isalive.proto</Link>
-    </Protobuf>
-  </ItemGroup>
+  <!--
+    The following solves the problem that 'dotnet pack' does not include the DLLs from referenced projects.
+    See https://github.com/NuGet/Home/issues/3891 for a description of the problem
+    and for newer versions / workarounds / built-in methods.
+  -->
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>
+      $(TargetsForTfmSpecificBuildOutput);PackReferencedProjectOutputs
+    </TargetsForTfmSpecificBuildOutput>
+  </PropertyGroup>
+
+  <Target Name="PackReferencedProjectOutputs" DependsOnTargets="BuildOnlySettings;ResolveReferences">
+    <ItemGroup>
+      <BuildOutputInPackage Include="@(ReferenceCopyLocalPaths-&gt;WithMetadataValue('ReferenceSourceTarget', 'ProjectReference'))" />
+    </ItemGroup>
+  </Target>
 
 </Project>

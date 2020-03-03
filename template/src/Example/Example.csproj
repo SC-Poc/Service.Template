@@ -8,10 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Protos\isalive.proto" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0" />
@@ -23,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Protos\isalive.proto" />
+    <ProjectReference Include="..\Example.Contract\Example.Protos.csproj" />
   </ItemGroup>
 
   <ItemGroup>
