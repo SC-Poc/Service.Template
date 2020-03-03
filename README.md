@@ -30,6 +30,9 @@ You can collect settings for all services in a cluster in one place. It is can s
 Service after start can load appsettings.josn from the external server by HTTP GET request.
 To activate this feature you should set in Environment variable 'RemoteSettingsUrl' URL address for getting JSON content.
 
+Confie example you can see in []().
+To run project locally please copy [format.appsettings.json](https://github.com/SC-Poc/Service.Template/blob/master/template/format.appsettings.json) to [project foulder](https://github.com/SC-Poc/Service.Template/tree/master/template/src/Example), rename to `appsettings.json` and fill params
+
 ### Use Serilog for structed logs
 Use Serilog to improve log system for write structed logs. 
 Log by default writed to console.
