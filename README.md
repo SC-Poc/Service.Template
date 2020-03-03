@@ -48,11 +48,13 @@ SeqUrl = http://localhost:5341
 User interface you can see at http://localhost:8080
 
 If you want persist log database then use:
+
 `
 docker volume create seq
 `
+
 `
-docker run -it -p 5341:80 -e ACCEPT_EULA=Y --mount source=seq,target=/data datalust/seq
+docker run -it -p 5341:5341 -p 8080:80 -e ACCEPT_EULA=Y --mount source=seq,target=/data datalust/seq
 `
 
 TODO: 
