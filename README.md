@@ -36,6 +36,25 @@ Log by default writed to console.
 You can activate the feature to write logs to external log storage - [Seq](https://datalust.co/seq). Seq it is a very light tool, you can run in your local machine or into your cluster. And collect logs from all services in this single store to analyze.
 To activate this feature you should set in Environment variable 'SeqUrl' URL address for Seq.
 
+#### Use SEQ locally
+To collect and read logs locally you can run Seq locally by docker:
+`
+docker run -it -p 5341:5341 -p 8080:80 -e ACCEPT_EULA=Y datalust/seq
+`
+Add envoronment variable to project (or to operation system)
+`
+SeqUrl = http://localhost:5341
+`
+User interface you can see at http://localhost:8080
+
+If you want persist log database then use:
+`
+docker volume create seq
+`
+`
+docker run -it -p 5341:80 -e ACCEPT_EULA=Y --mount source=seq,target=/data datalust/seq
+`
+
 TODO: 
 * Add opportunity to send log to ELK
 * Add opportunity to send log to external server by GRPC
