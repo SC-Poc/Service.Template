@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using Example.Client;
-using Service.Example.Protos;
+using Example.Protos;
 
 namespace Example.TestClient
 {

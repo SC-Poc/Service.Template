@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
+using Example.Protos;
 using Grpc.Core;
-using Service.Example.Protos;
 using Swisschain.Sdk.Server.Common;
 
 namespace Example.GrpcServices

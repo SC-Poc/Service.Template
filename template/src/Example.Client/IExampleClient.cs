@@ -1,4 +1,4 @@
-﻿using Service.Example.Protos;
+﻿using Example.Protos;
 
 namespace Example.Client
 {
