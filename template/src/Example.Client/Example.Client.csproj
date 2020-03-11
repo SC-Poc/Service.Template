@@ -21,7 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Example.Contract\Example.Protos.csproj" />
+    <ProjectReference Include="..\Example.Contract\Example.Protos.csproj" PrivateAssets="All"/>
   </ItemGroup>
 
   <!--
