@@ -12,17 +12,14 @@ where ${path} is the **full** path to the clonned directory (where the folder .t
 ### Create
 
 `
-dotnet new swissservice -n {ServiceName} -o ServiceDirectory -di {docker-image-name} -p {ProjectName}
+dotnet new swissservice -n {ServiceName} -o ServiceDirectory -di {docker-image-name} -pn {proudct-namespace} -p {ProductName}
 `
 
 e.g.
 
 `
-dotnet new swissservice -n WalletWatcher -o "D:\SwissChainRoot\Service.WalletWatcher" -di "bil-wallet-watcher" -p Bil 
+dotnet new swissservice -n Wallet -o Service.Sirius.Wallet -di wallet -pn sirius -p Sirius 
 `
-
--di is a parameter for docker image in swisschains
-
 # Features added to the template
 
 ### Load appsettings.josn from external server

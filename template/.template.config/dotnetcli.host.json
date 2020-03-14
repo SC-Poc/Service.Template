@@ -1,11 +1,15 @@
 {
   "symbolInfo": {
-    "renameDockerImageName": {
+    "dockerImageName": {
       "longName": "renameDockerImageName",
       "shortName": "di"
     },
-    "projectName": {
-      "longName": "project",
+    "productNamespace": {
+      "longName": "product-namespace",
+      "shortName": "pn"
+    }
+    "productName": {
+      "longName": "product",
       "shortName": "p"
     }
   }
