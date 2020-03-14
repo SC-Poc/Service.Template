@@ -8,7 +8,7 @@ metadata:
     environment: Development
     tier: Service
   name: service-example
-  namespace: services
+  namespace: product-namespace
 spec:
   revisionHistoryLimit: 1
   minReadySeconds: 10

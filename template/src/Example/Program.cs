@@ -10,7 +10,7 @@ namespace Example
     {
         public static void Main(string[] args)
         {
-            using (var loggerFactory = LogConfigurator.Configure("Swisschain-Project-Name", ApplicationEnvironment.Config["SeqUrl"]))
+            using (var loggerFactory = LogConfigurator.Configure("Swisschain-Product-Name", ApplicationEnvironment.Config["SeqUrl"]))
             {
                 var logger = loggerFactory.CreateLogger<Program>();
 
