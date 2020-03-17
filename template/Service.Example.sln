@@ -9,6 +9,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. Solution Items", "01. S
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\dotnetcore.yml = .github\workflows\dotnetcore.yml
 		format.appsettings.json = format.appsettings.json
+		.github\workflows\release-service.yml = .github\workflows\release-service.yml
+		.github\workflows\validate-commit.yml = .github\workflows\validate-commit.yml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02. Tests", "02. Tests", "{7F3DBAA2-139B-401D-A33F-1409A9BB4DE8}"
@@ -19,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Client", "src\Examp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.TestClient", "tests\Example.TestClient\Example.TestClient.csproj", "{E68690DB-606F-49CA-9BAB-DF5B5EA2E8F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example.Protos", "src\Example.Contract\Example.Protos.csproj", "{48E5261D-8A27-4496-88F1-EF76BE4279DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example.Protos", "src\Example.Contract\Example.Protos.csproj", "{48E5261D-8A27-4496-88F1-EF76BE4279DE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
