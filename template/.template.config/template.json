@@ -10,15 +10,20 @@
   },
   "sourceName": "Example",
   "symbols": {
-    "renameDockerImageName": {
+    "dockerImageName": {
       "type": "parameter",
       "defaultValue": "service-example",
       "replaces": "service-example"
     },
-    "projectName": {
+    "productNamespace": {
       "type": "parameter",
-      "replaces": "Swisschain-Project-Name",
-      "description": "Name of the Swisschain project to which the service belongs"
+      "replaces": "product-namespace",
+      "description": "Namespace for the product in the Kubernetes cluster"
+    },
+    "productName": {
+      "type": "parameter",
+      "replaces": "Swisschain-Product-Name",
+      "description": "Name of the Swisschain product to which the service belongs"
     },
     "clientSecretsId": {
       "type": "generated",

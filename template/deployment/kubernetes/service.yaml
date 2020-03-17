@@ -5,7 +5,7 @@ metadata:
     app: service-example
     environment: Development
   name: service-example
-  namespace: services
+  namespace: product-namespace
 spec:
   ports:
   - name: http
