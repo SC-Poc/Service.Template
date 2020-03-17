@@ -1,6 +1,8 @@
-name: Validate Commit
+name: Continuous integration for Example
 
-on: [push, pull_request]
+on:
+  push:
+    tags: "service-*"
 
 jobs:
   build:
@@ -17,3 +19,16 @@ jobs:
       run: dotnet build --configuration Release
     - name: Test
       run: dotnet test --configuration Release
+    - name: Publish
+      run: dotnet publish ./src/Example/Example.csproj --output ./publish --configuration Release /p:AssemblyVersion=${GITHUB_REF#refs/tags/}
+    - name: Check dir
+      run: ls ./publish
+    - name: Publish to Registry
+      uses: SC-Poc/Publish-Docker-Github-Action@master
+      with:
+        name: swisschains/service-example
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        workdir: ./publish
+        # snapshot: true # use snapshot to push an additional image, which is tagged with {YEAR}{MONTH}{DAY}{HOUR}{MINUTE}{SECOND}{first 6 digits of the git sha}
+        tag_names: true     
