@@ -12,7 +12,7 @@ namespace ServiceName.Worker
         {
             Console.Title = "SwisschainProductName ServiceName Worker";
 
-            using (var loggerFactory = LogConfigurator.Configure("SwisschainProductName", "worker", ApplicationEnvironment.Config["SeqUrl"]))
+            using (var loggerFactory = LogConfigurator.Configure("SwisschainProductName", ApplicationEnvironment.Config["SeqUrl"]))
             {
                 var logger = loggerFactory.CreateLogger<Program>();
 
