@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 
-namespace ServiceName.Common.AppFeatureExample
+namespace ServiceName.Common.Domain.AppFeatureExample
 {
     public static class ServiceCollectionExtensions
     {

@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MassTransit;
 using Microsoft.AspNetCore.Mvc;
-using ServiceName.Common.AppFeatureExample;
+using ServiceName.Common.Domain.AppFeatureExample;
 
 namespace ServiceName.WebApi
 {
