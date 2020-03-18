@@ -35,10 +35,10 @@ namespace ServiceName
 
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
-                    cfg.Host(this.Config.RabbitMq.HostUrl, host =>
+                    cfg.Host(Config.RabbitMq.HostUrl, host =>
                     {
-                        host.Username(this.Config.RabbitMq.Username);
-                        host.Password(this.Config.RabbitMq.Password);
+                        host.Username(Config.RabbitMq.Username);
+                        host.Password(Config.RabbitMq.Password);
                     });
 
                     cfg.SetLoggerFactory(provider.GetRequiredService<ILoggerFactory>());
