@@ -12,13 +12,13 @@ where ${path} is the **full** path to the clonned directory (where the folder .t
 ### Create
 
 `
-dotnet new swissservice -n {ServiceName} -o ServiceDirectory -di {docker-image-name} -pn {proudct-namespace} -p {ProductName}
+dotnet new swissservice -n {ServiceName} -o ServiceDirectory -snk {service-name-kebab-case} -pnk {proudct-name-kebab-case} -pnc {ProductNameCamelCase}
 `
 
 e.g.
 
 `
-dotnet new swissservice -n Wallet -o Service.Sirius.Wallet -di wallet -pn sirius -p Sirius 
+dotnet new swissservice -n Wallet -o Service.Sirius.Wallet -snk wallet -pnk sirius -pnc Sirius
 `
 # Features added to the template
 

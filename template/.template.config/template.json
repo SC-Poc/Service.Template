@@ -8,27 +8,35 @@
   "tags": {
     "language": "C#"
   },
-  "sourceName": "Example",
+  "sourceName": "ServiceName",
   "symbols": {
-    "dockerImageName": {
+    "serviceNameKebab": {
       "type": "parameter",
-      "defaultValue": "service-example",
-      "replaces": "service-example"
+      "replaces": "swisschain-service-name",
+      "description": "Name of the service image"
     },
-    "productNamespace": {
+    "productNameKebab": {
       "type": "parameter",
-      "replaces": "product-namespace",
-      "description": "Namespace for the product in the Kubernetes cluster"
+      "replaces": "swisschain-product-name",
+      "description": "Namespace of the Swisschain product in the kebab-case"
     },
-    "productName": {
+    "productNameCamel": {
       "type": "parameter",
-      "replaces": "Swisschain-Product-Name",
-      "description": "Name of the Swisschain product to which the service belongs"
+      "replaces": "SwisschainProductName",
+      "description": "Name of the Swisschain product to which the CamelCase"
     },
     "clientSecretsId": {
       "type": "generated",
       "generator": "guid",
       "replaces": "user-secrets-id",
+      "parameters": {
+        "format":"N"
+      }
+    },
+    "workerClientSecretsId": {
+      "type": "generated",
+      "generator": "guid",
+      "replaces": "worker-user-secrets-id",
       "parameters": {
         "format":"N"
       }

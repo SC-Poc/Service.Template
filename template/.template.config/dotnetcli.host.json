@@ -1,16 +1,16 @@
 {
   "symbolInfo": {
-    "dockerImageName": {
-      "longName": "renameDockerImageName",
-      "shortName": "di"
+    "serviceNameKebab": {
+      "longName": "service-name-kebab",
+      "shortName": "snk"
     },
-    "productNamespace": {
-      "longName": "product-namespace",
-      "shortName": "pn"
+    "productNameKebab": {
+      "longName": "product-name-kebab",
+      "shortName": "pnk"
     },
-    "productName": {
-      "longName": "product",
-      "shortName": "p"
+    "productNameCamel": {
+      "longName": "product-name-camel",
+      "shortName": "pnc"
     }
   }
 }

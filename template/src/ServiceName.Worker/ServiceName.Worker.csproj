@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>ServiceName.Worker</AssemblyName>
+    <RootNamespace>ServiceName.Worker</RootNamespace>
+    <UserSecretsId>worker-user-secrets-id</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.2.2" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.2" />
+    <PackageReference Include="Swisschain.Sdk.Server" Version="3.0.0-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ServiceName.Common\ServiceName.Common.csproj" />
+    <ProjectReference Include="..\ServiceName.MessagingContract\ServiceName.MessagingContract.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Dockerfile">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
