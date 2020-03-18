@@ -32,7 +32,7 @@ jobs:
     - name: Publish API to Registry
       uses: SC-Poc/Publish-Docker-Github-Action@master
       with:
-        name: swisschains/swisschain-product-name-swisschain-service-name-api
+        name: swisschains/swisschain-product-name-swisschain-service-name
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         workdir: ./publish-api

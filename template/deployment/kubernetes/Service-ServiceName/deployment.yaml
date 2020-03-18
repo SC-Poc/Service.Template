@@ -4,10 +4,10 @@ metadata:
   annotations:
     description: ServiceName
   labels:
-    app: swisschain-service-name-api
+    app: swisschain-service-name
     environment: Development
     tier: Service
-  name: swisschain-service-name-api
+  name: swisschain-service-name
   namespace: swisschain-product-name
 spec:
   revisionHistoryLimit: 1
@@ -20,16 +20,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: swisschain-service-name-api
+      app: swisschain-service-name
   template:
     metadata:
       labels:
-        app: swisschain-service-name-api
-      name: swisschain-service-name-api
+        app: swisschain-service-name
+      name: swisschain-service-name
     spec:
       containers:
-      - name: swisschain-service-name-api
-        image: docker.io/swisschains/swisschain-product-name-swisschain-service-name-api:latest
+      - name: swisschain-service-name
+        image: docker.io/swisschains/swisschain-product-name-swisschain-service-name:latest
         imagePullPolicy: Always
         lifecycle:
           postStart:

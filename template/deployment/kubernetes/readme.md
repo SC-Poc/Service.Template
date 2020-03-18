@@ -1,4 +1,4 @@
-1. Copy `Service-ServiceName-Api` and `Service-ServiceName-Worker` to the https://github.com/SC-Poc/kubernetes-swisschain/tree/master/Kubernetes/03.Pods/SwisschainProductName. 
+1. Copy `Service-ServiceName` and `Service-ServiceName-Worker` to the https://github.com/SC-Poc/kubernetes-swisschain/tree/master/Kubernetes/03.Pods/SwisschainProductName. 
 2. Add services namespace if necessary.
 3. Copy `secret.yaml` to the https://github.com/SC-Poc/kubernetes-swisschain-secret/tree/master/03.Pods/SwisschainProductName/Service-ServiceName
 4. Copy `appsettings.json` to https://github.com/SC-Poc/kubernetes-swisschain/tree/master/Settings/swisschain-product-name/swisschain-service-name.json
