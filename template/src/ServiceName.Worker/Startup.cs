@@ -54,7 +54,7 @@ namespace ServiceName.Worker
                     });
                 }));
 
-                services.AddSingleton<IHostedService, BusHost>();
+                services.AddHostedService<BusHost>();
             });
         }
     }

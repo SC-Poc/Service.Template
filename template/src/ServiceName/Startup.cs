@@ -44,7 +44,7 @@ namespace ServiceName
                     cfg.SetLoggerFactory(provider.GetRequiredService<ILoggerFactory>());
                 }));
 
-                services.AddSingleton<IHostedService, BusHost>();
+                services.AddHostedService<BusHost>();
             });
         }
 
