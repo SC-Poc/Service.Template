@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestClient", "tests\TestCli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceName.ApiContract", "src\ServiceName.ApiContract\ServiceName.ApiContract.csproj", "{48E5261D-8A27-4496-88F1-EF76BE4279DE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceNameTests", "src\tests\ServiceNameTests\ServiceNameTests.csproj", "{4C51C936-D545-49A9-816A-4F2C357B56DF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceNameTests", "tests\ServiceNameTests\ServiceNameTests.csproj", "{4C51C936-D545-49A9-816A-4F2C357B56DF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ServiceName.Common", "src\ServiceName.Common\ServiceName.Common.csproj", "{2BFF98C7-1714-4000-A468-DBD9C24E7B02}"
 EndProject
