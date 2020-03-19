@@ -57,7 +57,7 @@ _NCrunch_*
 .vs
 node_modules
 **/launchSettings.json
-**/appsettings.json
-**/appsettings.*.json
+template/src/**/appsettings.json
+template/src/**/appsettings.*.json
 **/*sonar*
 /client/**/*.xml
