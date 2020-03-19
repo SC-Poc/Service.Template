@@ -81,10 +81,11 @@ You should only setup secret into your GitHub repository:
 * DOCKER_PASSWORD - password or API key from [hub.docker.com](https://hub.docker.com/)
 * NUGET_TOCKEN - access token to [nuget.org](https://www.nuget.org/) account
 
-TODO:
-* add CI for client nuget
 * add CI for build, test, without deply to docker hub
-* add CI for release with version number
+
+* Use `client-x.y.z` release version pattern to release the API Client nuget
+* Use `messages-x.y.z` release version pattern to release the Messaging contract nuget
+* Use `service-x.y.z` release version pattern to release service dockers
 
 ### Environment variables used
 |Variable|Required|Value|
