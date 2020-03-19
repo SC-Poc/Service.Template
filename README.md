@@ -92,3 +92,6 @@ TODO:
 |RemoteSettingsUrl|no|URL address for getting confg content which can be overriden by `appsettings.json`|
 |SeqUrl|no|URL address for Seq server to keep logs|
 
+### Deployment
+Instruction: [readme](https://github.com/SC-Poc/Service.Template/blob/master/template/deployment/kubernetes/readme.md)
+
