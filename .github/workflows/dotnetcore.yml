@@ -17,11 +17,11 @@ jobs:
       run: dotnet build --configuration Release "template/Service.ServiceName.sln"
     - name: Test
       run: dotnet test --no-build --configuration Release "template/Service.ServiceName.sln"
-    - name: Publish API
-      run: dotnet publish ./template/src/ServiceName/ServiceName.csproj --output ./publish-api --configuration Release /p:AssemblyVersion=1.0.0
-      - name: Publish Worker
-      run: dotnet publish ./template/src/ServiceName.Worker/ServiceName.Worker.csproj --output ./publish-worker --configuration Release /p:AssemblyVersion=1.0.0
-    - name: Check API dir 
+- name: Publish API
+      run: dotnet publish --no-build ./template/src/ServiceName/ServiceName.csproj --output ./publish-api --configuration Release /p:AssemblyVersion=0.0.0
+    - name: Publish worker
+      run: dotnet publish --no-build ./template/src/ServiceName.Worker/ServiceName.Worker.csproj --output ./publish-worker --configuration Release /p:AssemblyVersion=0.0.0
+    - name: Check api dir
       run: ls ./publish-api
-    - name: Check worker dir 
+    - name: Check worker dir
       run: ls ./publish-worker
