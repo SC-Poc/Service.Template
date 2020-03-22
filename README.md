@@ -88,10 +88,12 @@ You should only setup secret into your GitHub repository:
 * Use `service-x.y.z` release version pattern to release service dockers
 
 ### Environment variables used
-|Variable|Required|Value|
-|-------|-------|-------|
-|RemoteSettingsUrl|no|URL address for getting confg content which can be overriden by `appsettings.json`|
-|SeqUrl|no|URL address for Seq server to keep logs|
+|Variable|Description|Required|Default value|
+|-------|-------|-------|-------|
+|RemoteSettingsUrl|URL address for getting confg content which can be overriden by `appsettings.json`|no|null|
+|SeqUrl|URL address for Seq server to keep logs|no|null|
+|HttpPort|HTTP port|no|5000|
+|GrpcPort|gRpc port|no|5001|
 
 ### Deployment
 Instruction: [readme](https://github.com/SC-Poc/Service.Template/blob/master/template/deployment/kubernetes/readme.md)

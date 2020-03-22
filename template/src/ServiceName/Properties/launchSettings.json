@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "ServiceName": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "SeqUrl": "http://seq.common.svc.cluster.local",
+        "HttpPort": 5000,
+        "GrpcPort": 5001
+      }
+    }
+  }
+}

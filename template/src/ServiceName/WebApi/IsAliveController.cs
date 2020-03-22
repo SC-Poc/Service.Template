@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ServiceName.WebApi.Models.IsAlive;
 using Swisschain.Sdk.Server.Common;
@@ -10,6 +11,7 @@ namespace ServiceName.WebApi
     public class IsAliveController : ControllerBase
     {
         [HttpGet]
+        [ProducesResponseType(typeof(IsAliveResponse), StatusCodes.Status200OK)]
         public IsAliveResponse Get()
         {
             var response = new IsAliveResponse

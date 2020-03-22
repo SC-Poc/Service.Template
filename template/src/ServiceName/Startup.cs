@@ -4,13 +4,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ServiceName.Common.Configuration;
 using ServiceName.Common.Domain.AppFeatureExample;
 using ServiceName.Common.HostedServices;
 using ServiceName.Common.Persistence;
 using ServiceName.GrpcServices;
+using Swashbuckle.AspNetCore.SwaggerGen;
 using Swisschain.Sdk.Server.Common;
 
 namespace ServiceName
@@ -27,7 +27,7 @@ namespace ServiceName
 
             services.AddPersistence(Config.Db.ConnectionString);
             services.AddAppFeatureExample();
-            
+
             services.AddMassTransit(x =>
             {
                 // TODO: Register commands recipient endpoints. It's just an example.
@@ -46,6 +46,13 @@ namespace ServiceName
 
                 services.AddHostedService<BusHost>();
             });
+        }
+
+        protected override void ConfigureSwaggerGen(SwaggerGenOptions swaggerGenOptions)
+        {
+            base.ConfigureSwaggerGen(swaggerGenOptions);
+
+            swaggerGenOptions.IncludeXmlComments(@"bin\ServiceName.xml", includeControllerXmlComments: true);
         }
 
         protected override void RegisterEndpoints(IEndpointRouteBuilder endpoints)

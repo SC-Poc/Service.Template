@@ -3,7 +3,6 @@ using GreenPipes;
 using MassTransit;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using ServiceName.Common.Configuration;
 using ServiceName.Common.Domain.AppFeatureExample;
@@ -28,7 +27,7 @@ namespace ServiceName.Worker
             services.AddPersistence(Config.Db.ConnectionString);
             services.AddAppFeatureExample();
             services.AddMessageConsumers();
-            
+
             services.AddMassTransit(x =>
             {
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
@@ -40,9 +39,9 @@ namespace ServiceName.Worker
                     });
 
                     cfg.UseMessageRetry(y =>
-                        y.Exponential(5, 
+                        y.Exponential(5,
                             TimeSpan.FromMilliseconds(100),
-                            TimeSpan.FromMilliseconds(10_000), 
+                            TimeSpan.FromMilliseconds(10_000),
                             TimeSpan.FromMilliseconds(100)));
 
                     cfg.SetLoggerFactory(provider.GetRequiredService<ILoggerFactory>());
