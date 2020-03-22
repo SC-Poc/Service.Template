@@ -52,7 +52,7 @@ namespace ServiceName
         {
             base.ConfigureSwaggerGen(swaggerGenOptions);
 
-            swaggerGenOptions.IncludeXmlComments(@"bin\ServiceName.xml", includeControllerXmlComments: true);
+            swaggerGenOptions.IncludeXmlComments("ServiceName.xml", includeControllerXmlComments: true);
         }
 
         protected override void RegisterEndpoints(IEndpointRouteBuilder endpoints)
