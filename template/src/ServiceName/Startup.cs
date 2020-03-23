@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+using System.Reflection;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
@@ -52,7 +54,9 @@ namespace ServiceName
         {
             base.ConfigureSwaggerGen(swaggerGenOptions);
 
-            swaggerGenOptions.IncludeXmlComments("ServiceName.xml", includeControllerXmlComments: true);
+            var binPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
+            swaggerGenOptions.IncludeXmlComments($"{binPath}/ServiceName.xml", includeControllerXmlComments: true);
         }
 
         protected override void RegisterEndpoints(IEndpointRouteBuilder endpoints)
