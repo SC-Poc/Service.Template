@@ -3,13 +3,12 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <AssemblyName>ServiceName</AssemblyName>
-    <RootNamespace>ServiceName</RootNamespace>
+    <AssemblyName>Swisschain.SwisschainProductName.ServiceName</AssemblyName>
     <UserSecretsId>user-secrets-id</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup>
-    <DocumentationFile>bin\ServiceName.xml</DocumentationFile>
+    <DocumentationFile>bin\SwisschainProductName.ServiceName.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
