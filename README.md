@@ -12,7 +12,7 @@ where ${path} is the **full** path to the clonned directory (where the folder .t
 ### Create
 
 `
-dotnet new swissservice -n {ServiceName} -o ServiceDirectory -snk {service-name-kebab-case} -pnk {proudct-name-kebab-case} -pnc {ProductNameCamelCase}
+dotnet new swissservice -n {ServiceName} -o {ServiceDirectory} -snk {service-name-kebab-case} -pnk {proudct-name-kebab-case} -pnc {ProductNameCamelCase}
 `
 
 e.g.
