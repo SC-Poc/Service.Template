@@ -1,4 +1,4 @@
-![.NET Core](https://github.com/SC-Poc/Service.Template/workflows/.NET%20Core/badge.svg)
+![.NET Core](https://github.com/swisschain/Service.Template/workflows/.NET%20Core/badge.svg)
 
 # HOW TO USE TEMPLATE
 
