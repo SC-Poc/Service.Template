@@ -14,14 +14,6 @@ jobs:
       with:
         dotnet-version: 3.1.100
     - name: Build
-      run: dotnet build --configuration Release "template/Service.ServiceName.sln"
+      run: dotnet build --configuration Release "template/ServiceName.sln"
     - name: Test
-      run: dotnet test --no-build --configuration Release "template/Service.ServiceName.sln"
-    - name: Publish API
-      run: dotnet publish --no-build ./template/src/ServiceName/ServiceName.csproj --output ./publish-api --configuration Release /p:AssemblyVersion=0.0.0
-    - name: Publish worker
-      run: dotnet publish --no-build ./template/src/ServiceName.Worker/ServiceName.Worker.csproj --output ./publish-worker --configuration Release /p:AssemblyVersion=0.0.0
-    - name: Check api dir
-      run: ls ./publish-api
-    - name: Check worker dir
-      run: ls ./publish-worker
+      run: dotnet test --no-build --configuration Release "template/ServiceName.sln"
