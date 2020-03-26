@@ -19,7 +19,7 @@ namespace ServiceName.Worker.MessageConsumers
         {
             var command = context.Message;
 
-            _logger.LogInformation("'Execute something' command has been processed {@command}", command);
+            _logger.LogInformation("'Execute something' command has been processed {@context}", command);
 
             await Task.CompletedTask;
         }

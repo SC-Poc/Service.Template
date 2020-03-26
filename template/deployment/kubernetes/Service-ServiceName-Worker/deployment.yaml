@@ -63,7 +63,4 @@ spec:
         - name: SeqUrl
           value: "http://seq.common"
         - name: RemoteSettingsUrl
-          valueFrom:
-            secretKeyRef:
-              name: swisschain-service-name
-              key: RemoteSettingsUrl
+          value: "http://settings.common.svc.cluster.local/swisschain-product-name/swisschain-service-name"
