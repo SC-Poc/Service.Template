@@ -90,7 +90,7 @@ You should only setup secret into your GitHub repository:
 ### Environment variables used
 |Variable|Description|Required|Default value|
 |-------|-------|-------|-------|
-|RemoteSettingsUrl|URL address for getting confg content which can be overriden by `appsettings.json`|no|null|
+|RemoteSettingsUrl__N|Array of URL addresses for getting confg content which can be overriden by `appsettings.json`. N is index in the array, it should be started from 0. You can specify as many URLs as you need. URLs will be applied in the order as they are specified in the array|no|null|
 |SeqUrl|URL address for Seq server to keep logs|no|null|
 |HttpPort|HTTP port|no|5000|
 |GrpcPort|gRpc port|no|5001|
