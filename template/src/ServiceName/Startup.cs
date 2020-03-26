@@ -50,15 +50,6 @@ namespace ServiceName
             });
         }
 
-        protected override void ConfigureSwaggerGen(SwaggerGenOptions swaggerGenOptions)
-        {
-            base.ConfigureSwaggerGen(swaggerGenOptions);
-
-            var binPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            swaggerGenOptions.IncludeXmlComments($"{binPath}/ServiceName.xml", includeControllerXmlComments: true);
-        }
-
         protected override void RegisterEndpoints(IEndpointRouteBuilder endpoints)
         {
             base.RegisterEndpoints(endpoints);
