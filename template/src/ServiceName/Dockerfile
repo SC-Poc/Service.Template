@@ -3,4 +3,4 @@ WORKDIR /app
 EXPOSE 5001
 EXPOSE 5000
 COPY . .
-ENTRYPOINT ["dotnet", "ServiceName.dll"]
+ENTRYPOINT ["dotnet", "Swisschain.SwisschainProductName.ServiceName.dll"]
