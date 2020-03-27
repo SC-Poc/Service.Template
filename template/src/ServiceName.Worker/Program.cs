@@ -12,7 +12,7 @@ namespace ServiceName.Worker
     {
         private sealed class RemoteSettingsConfig
         {
-            public IReadOnlyCollection<string> RemoteSettingsUrls { get; set; } = Array.Empty<string>();
+            public IReadOnlyCollection<string> RemoteSettingsUrls { get; set; }
         }
 
         public static void Main(string[] args)
@@ -24,7 +24,7 @@ namespace ServiceName.Worker
             using var loggerFactory = LogConfigurator.Configure(
                 "SwisschainProductName", 
                 ApplicationEnvironment.Config["SeqUrl"],
-                remoteSettingsConfig.RemoteSettingsUrls);
+                remoteSettingsConfig.RemoteSettingsUrls ?? Array.Empty<string>());
             
             var logger = loggerFactory.CreateLogger<Program>();
 
@@ -47,7 +47,7 @@ namespace ServiceName.Worker
                 .SwisschainService<Startup>(options =>
                 {
                     options.UseLoggerFactory(loggerFactory);
-                    options.AddWebJsonConfigurationSources(remoteSettingsConfig.RemoteSettingsUrls);
+                    options.AddWebJsonConfigurationSources(remoteSettingsConfig.RemoteSettingsUrls ?? Array.Empty<string>());
                 });
     }
 }
