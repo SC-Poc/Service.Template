@@ -28,7 +28,7 @@ Service after start can load appsettings.josn from the external server by HTTP G
 To activate this feature you should set in Environment variable 'RemoteSettingsUrl' URL address for getting JSON content.
 
 Confie example you can see in []().
-To run project locally please copy [format.appsettings.json](https://github.com/SC-Poc/Service.Template/blob/master/template/format.appsettings.json) to [project foulder](https://github.com/SC-Poc/Service.Template/tree/master/template/src/Example), rename to `appsettings.json` and fill params
+To run project locally please copy [format.appsettings.json](https://github.com/swisschain/Service.Template/blob/master/template/format.appsettings.json) to [project foulder](https://github.com/swisschain/Service.Template/tree/master/template/src/Example), rename to `appsettings.json` and fill params
 
 ### Use Serilog for structed logs
 Use Serilog to improve log system for write structed logs. 
@@ -68,11 +68,11 @@ Template service by default ready to work with GRPC services and REst services. 
 
 By default application do not support SSL and HTTPS. Client for GRPS should use http ptotocol with out encription.
 Example of server and client you can see in solution: 
-* [MonitoringService](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Example/GrpcServices/MonitoringService.cs) server side
-* [Client](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Example.Client/ExampleClient.cs) client side
-* [Console app](https://github.com/SC-Poc/Service.Template/blob/master/template/tests/Example.TestClient/Program.cs) usage example
+* [MonitoringService](https://github.com/swisschain/Service.Template/blob/master/template/src/Example/GrpcServices/MonitoringService.cs) server side
+* [Client](https://github.com/swisschain/Service.Template/blob/master/template/src/Example.Client/ExampleClient.cs) client side
+* [Console app](https://github.com/swisschain/Service.Template/blob/master/template/tests/Example.TestClient/Program.cs) usage example
 
-Solution by default includes a project for client library: [NAME.Client](https://github.com/SC-Poc/Service.Template/blob/master/template/src/Example.Client/). You can build NuGet and use this library to simplify integration of other microservices with your application. Client Service install the library in solution, register client in DI container with client interface and star use interface ... like it is an internal implementation
+Solution by default includes a project for client library: [NAME.Client](https://github.com/swisschain/Service.Template/blob/master/template/src/Example.Client/). You can build NuGet and use this library to simplify integration of other microservices with your application. Client Service install the library in solution, register client in DI container with client interface and star use interface ... like it is an internal implementation
 
 ### Use Githib Action as CI for build and deploy docker image
 Template solution includes pipelines to build, test and deploy solution artifacts.
@@ -96,5 +96,5 @@ You should only setup secret into your GitHub repository:
 |GrpcPort|gRpc port|no|5001|
 
 ### Deployment
-Instruction: [readme](https://github.com/SC-Poc/Service.Template/blob/master/template/deployment/kubernetes/readme.md)
+Instruction: [readme](https://github.com/swisschain/Service.Template/blob/master/template/deployment/kubernetes/readme.md)
 
