@@ -12,7 +12,7 @@ namespace ServiceName.Worker
     {
         private sealed class RemoteSettingsConfig
         {
-            public IReadOnlyCollection<string> RemoteSettingsUrls { get; set; }
+            public IReadOnlyCollection<string> RemoteSettingsUrls { get; set; } = Array.Empty<string>();
         }
 
         public static void Main(string[] args)
