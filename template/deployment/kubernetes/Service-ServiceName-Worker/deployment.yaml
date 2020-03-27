@@ -62,5 +62,9 @@ spec:
         env:
         - name: SeqUrl
           value: "http://seq.common"
-        - name: RemoteSettingsUrl
+        - name: RemoteSettingsUrls__0 
+          value: "http://settings.common.svc.cluster.local/common"
+        - name: RemoteSettingsUrls__1 
+          value: "http://settings.common.svc.cluster.local/swisschain-product-name/common"
+        - name: RemoteSettingsUrls__2
           value: "http://settings.common.svc.cluster.local/swisschain-product-name/swisschain-service-name"
