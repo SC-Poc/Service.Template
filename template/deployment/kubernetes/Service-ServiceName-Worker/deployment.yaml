@@ -61,8 +61,8 @@ spec:
             cpu: 500m 
         env:
         - name: RemoteSettingsUrls__0 
-          value: "http://settings.common/common"
+          value: "http://settings.common.svc.cluster.local/common"
         - name: RemoteSettingsUrls__1 
-          value: "http://settings.common/swisschain-product-name/common"
+          value: "http://settings.common.svc.cluster.local/swisschain-product-name/common"
         - name: RemoteSettingsUrls__2
-          value: "http://settings.common/swisschain-product-name/swisschain-service-name"
+          value: "http://settings.common.svc.cluster.local/swisschain-product-name/swisschain-service-name"
