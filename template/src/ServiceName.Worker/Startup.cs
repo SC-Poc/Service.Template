@@ -15,7 +15,8 @@ namespace ServiceName.Worker
 {
     public sealed class Startup : SwisschainStartup<AppConfig>
     {
-        public Startup(IConfiguration configuration) : base(configuration)
+        public Startup(IConfiguration configuration)
+            : base(configuration)
         {
         }
 
