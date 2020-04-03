@@ -22,6 +22,10 @@ dotnet new swissservice -n Wallet -o Service.Sirius.Wallet -snk wallet -pnk siri
 `
 # Features added to the template
 
+### Swischain.Sdk
+
+It is recomended to read [Swisschain.Sdk.Server readme](https://github.com/swisschain/Swisschain.Sdk.Server/blob/master/README.md) as well
+
 ### Load appsettings.josn from external server
 You can collect settings for all services in a cluster in one place. It is can simplify to DevOps management of configuration.
 Service after start can load appsettings.josn from the external server by HTTP GET request.
@@ -34,7 +38,7 @@ To run project locally please copy [format.appsettings.json](https://github.com/
 Use Serilog to improve log system for write structed logs. 
 Log by default writed to console.
 You can activate the feature to write logs to external log storage - [Seq](https://datalust.co/seq). Seq it is a very light tool, you can run in your local machine or into your cluster. And collect logs from all services in this single store to analyze.
-To activate this feature you should set in Environment variable 'SeqUrl' URL address for Seq.
+To activate this feature you should set configuration variable 'SeqUrl' URL address for Seq.
 
 #### Use SEQ locally
 To collect and read logs locally you can run Seq locally by docker:
@@ -91,9 +95,15 @@ You should only setup secret into your GitHub repository:
 |Variable|Description|Required|Default value|
 |-------|-------|-------|-------|
 |RemoteSettingsUrl__N|Array of URL addresses for getting confg content which can be overriden by `appsettings.json`. N is index in the array, it should be started from 0. You can specify as many URLs as you need. URLs will be applied in the order as they are specified in the array|no|null|
-|SeqUrl|URL address for Seq server to keep logs|no|null|
+|SeqUrl|URL address for Seq server to keep logs|no|`null`|
 |HttpPort|HTTP port|no|5000|
 |GrpcPort|gRpc port|no|5001|
+|HOSTNAME|Will be used as the `host-name` key in the logs. If not specified, the OS user name will be used instaed|no|`null`|
+
+### Config variables used
+|Variable|Description|Required|Default value|
+|-------|-------|-------|-------|
+|SeqUrl|URL address for Seq server to keep logs|no|`null`|
 
 ### Deployment
 Instruction: [readme](https://github.com/swisschain/Service.Template/blob/master/template/deployment/kubernetes/readme.md)
