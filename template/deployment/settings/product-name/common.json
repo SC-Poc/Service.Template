@@ -1,0 +1,7 @@
+{
+  "RabbitMq": {
+    "HostUrl": "rabbit.swisschain-product-name.svc.cluster.local",
+    "Username": "${SwisschainProductName-RabbitMq-Login}",
+    "Password": "${SwisschainProductName-RabbitMq-Password}"
+  }
+}

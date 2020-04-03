@@ -1,8 +1,7 @@
 ﻿using System;
-using System.IO;
-using System.Reflection;
 using MassTransit;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,14 +11,14 @@ using ServiceName.Common.Domain.AppFeatureExample;
 using ServiceName.Common.HostedServices;
 using ServiceName.Common.Persistence;
 using ServiceName.GrpcServices;
-using Swashbuckle.AspNetCore.SwaggerGen;
 using Swisschain.Sdk.Server.Common;
 
 namespace ServiceName
 {
     public sealed class Startup : SwisschainStartup<AppConfig>
     {
-        public Startup(IConfiguration configuration) : base(configuration)
+        public Startup(IConfiguration configuration)
+            : base(configuration)
         {
         }
 
@@ -33,20 +32,23 @@ namespace ServiceName
             services.AddMassTransit(x =>
             {
                 // TODO: Register commands recipient endpoints. It's just an example.
-                EndpointConvention.Map<ExecuteSomething>(new Uri("queue:swisschain-product-name-swisschain-service-name-something-execution"));
+                EndpointConvention.Map<ExecuteSomething>(
+                    new Uri("queue:swisschain-product-name-swisschain-service-name-something-execution"));
 
                 x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
                 {
-                    cfg.Host(Config.RabbitMq.HostUrl, host =>
-                    {
-                        host.Username(Config.RabbitMq.Username);
-                        host.Password(Config.RabbitMq.Password);
-                    });
+                    cfg.Host(Config.RabbitMq.HostUrl,
+                        host =>
+                        {
+                            host.Username(Config.RabbitMq.Username);
+                            host.Password(Config.RabbitMq.Password);
+                        });
 
                     cfg.SetLoggerFactory(provider.GetRequiredService<ILoggerFactory>());
                 }));
 
                 services.AddHostedService<BusHost>();
+
             });
         }
 
