@@ -21,10 +21,7 @@ namespace ServiceName.Worker
 
             var remoteSettingsConfig = ApplicationEnvironment.Config.Get<RemoteSettingsConfig>();
 
-            using var loggerFactory = LogConfigurator.Configure(
-                "SwisschainProductName", 
-                ApplicationEnvironment.Config["SeqUrl"],
-                remoteSettingsConfig.RemoteSettingsUrls ?? Array.Empty<string>());
+            using var loggerFactory = LogConfigurator.Configure("SwisschainProductName", remoteSettingsConfig.RemoteSettingsUrls ?? Array.Empty<string>());
             
             var logger = loggerFactory.CreateLogger<Program>();
 

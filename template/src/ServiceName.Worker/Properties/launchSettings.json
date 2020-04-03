@@ -4,7 +4,6 @@
       "commandName": "Project",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "SeqUrl": "http://seq.common.svc.cluster.local",
         "RemoteSettingsUrls__0": "http://settings.common.svc.cluster.local/common",
         "RemoteSettingsUrls__1": "http://settings.common.svc.cluster.local/swisschain-product-name/common",
         "RemoteSettingsUrls__2": "http://settings.common.svc.cluster.local/swisschain-product-name/swisschain-service-name",
