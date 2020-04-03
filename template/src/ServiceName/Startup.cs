@@ -50,8 +50,6 @@ namespace ServiceName
                 services.AddHostedService<BusHost>();
 
             });
-
-            services.AddControllersWithViews();
         }
 
         protected override void RegisterEndpoints(IEndpointRouteBuilder endpoints)
