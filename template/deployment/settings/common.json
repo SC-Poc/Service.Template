@@ -1,0 +1,11 @@
+{
+  "Serilog": {
+    "minimumLevel": {
+      "default": "${DefaultLoggingLevel}",
+      "override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    }
+  }
+}
