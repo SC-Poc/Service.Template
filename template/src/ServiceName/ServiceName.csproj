@@ -21,13 +21,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MassTransit" Version="6.2.4" />
-    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.2.4" />
-    <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.4" />
+    <PackageReference Include="MassTransit" Version="6.2.5" />
+    <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.2.5" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.5" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Swisschain.Sdk.Server" Version="5.2.1" />
+    <PackageReference Include="Swisschain.Sdk.Server" Version="6.0.0" />
   </ItemGroup>
 
   <ItemGroup>
