@@ -6,4 +6,4 @@
 ![Worker docker image](https://img.shields.io/docker/v/swisschains/swisschain-product-name-swisschain-service-name-worker?sort=semver)
 
 # Environment Variables
-[README.md](https://github.com/swisschain/Swisschain.Sdk.Server/blob/master/README.md)
+[Logging](https://github.com/swisschain/Swisschain.Sdk.Server/blob/master/README.md#logging)
