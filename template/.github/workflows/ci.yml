@@ -52,3 +52,9 @@ jobs:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         NAMESPACE: swisschain-product-name
         POD: swisschain-service-name
+    - name: Restart worker
+      uses: swisschain/kube-restart-pods@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        NAMESPACE: swisschain-product-name
+        POD: swisschain-service-name-worker
