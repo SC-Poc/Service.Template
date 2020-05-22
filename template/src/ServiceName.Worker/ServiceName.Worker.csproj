@@ -6,12 +6,13 @@
     <AssemblyName>Swisschain.SwisschainProductName.ServiceName.Worker</AssemblyName>
     <RootNamespace>ServiceName.Worker</RootNamespace>
     <UserSecretsId>worker-user-secrets-id</UserSecretsId>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MassTransit.Extensions.DependencyInjection" Version="6.2.5" />
     <PackageReference Include="MassTransit.RabbitMQ" Version="6.2.5" />
-    <PackageReference Include="Swisschain.Sdk.Server" Version="6.0.0" />
+    <PackageReference Include="Swisschain.Sdk.Server" Version="6.3.0" />
   </ItemGroup>
 
   <ItemGroup>
