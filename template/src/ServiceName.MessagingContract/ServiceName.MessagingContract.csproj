@@ -9,4 +9,8 @@
     <Product>SwisschainProductName</Product>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="SourceLink.Create.CommandLine" Version="2.8.3" PrivateAssets="All" />
+  </ItemGroup>
+
 </Project>
