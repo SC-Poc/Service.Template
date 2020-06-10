@@ -44,7 +44,7 @@ namespace ServiceName
                             host.Password(Config.RabbitMq.Password);
                         });
 
-                    cfg.SetLoggerFactory(provider.GetRequiredService<ILoggerFactory>());
+                    cfg.SetLoggerFactory(provider.Container.GetRequiredService<ILoggerFactory>());
                 }));
 
                 services.AddHostedService<BusHost>();

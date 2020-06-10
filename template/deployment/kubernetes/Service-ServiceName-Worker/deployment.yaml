@@ -29,7 +29,7 @@ spec:
     spec:
       containers:
       - name: swisschain-service-name-worker
-        image: docker.io/swisschains/swisschain-product-name-swisschain-service-name-worker:latest
+        image: docker.io/swisschains/swisschain-product-name-swisschain-service-name-worker:dev
         imagePullPolicy: Always
         lifecycle:
           postStart:
