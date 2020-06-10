@@ -45,12 +45,12 @@ namespace ServiceName.Worker
                             TimeSpan.FromMilliseconds(10_000),
                             TimeSpan.FromMilliseconds(100)));
 
-                    cfg.SetLoggerFactory(provider.GetRequiredService<ILoggerFactory>());
+                    cfg.SetLoggerFactory(provider.Container.GetRequiredService<ILoggerFactory>());
 
                     // TODO: Define your receive endpoints. It's just an example:
                     cfg.ReceiveEndpoint("swisschain-product-name-swisschain-service-name-something-execution", e =>
                     {
-                        e.Consumer(provider.GetRequiredService<ExecuteSomethingConsumer>);
+                        e.Consumer(provider.Container.GetRequiredService<ExecuteSomethingConsumer>);
                     });
                 }));
 
