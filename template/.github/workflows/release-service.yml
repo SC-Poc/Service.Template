@@ -16,13 +16,13 @@ jobs:
       with:
         dotnet-version: 3.1.100
     - name: Build
-      run: dotnet build --configuration Release
+      run: dotnet build --configuration Release /p:AssemblyVersion=${GITHUB_REF#refs/tags/service-}
     - name: Test
       run: dotnet test --no-build --configuration Release
     - name: Publish API
-      run: dotnet publish --no-build ./src/ServiceName/ServiceName.csproj --output ./publish-api --configuration Release /p:AssemblyVersion=${GITHUB_REF#refs/tags/service-}
+      run: dotnet publish --no-build ./src/ServiceName/ServiceName.csproj --output ./publish-api --configuration Release
     - name: Publish worker
-      run: dotnet publish --no-build ./src/ServiceName.Worker/ServiceName.Worker.csproj --output ./publish-worker --configuration Release /p:AssemblyVersion=${GITHUB_REF#refs/tags/service-}
+      run: dotnet publish --no-build ./src/ServiceName.Worker/ServiceName.Worker.csproj --output ./publish-worker --configuration Release
     - name: Check API dir
       run: ls ./publish-api
     - name: Check worker dir
