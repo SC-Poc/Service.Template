@@ -1,6 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.1
 WORKDIR /app
-EXPOSE 5001
-EXPOSE 5000
 COPY . .
 ENTRYPOINT ["dotnet", "Swisschain.SwisschainProductName.ServiceName.dll"]

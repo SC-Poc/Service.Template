@@ -21,8 +21,9 @@ namespace ServiceName
 
             var remoteSettingsConfig = ApplicationEnvironment.Config.Get<RemoteSettingsConfig>();
 
-            using var loggerFactory = LogConfigurator.Configure("SwisschainProductName", remoteSettingsConfig.RemoteSettingsUrls ?? Array.Empty<string>());
-            
+            using var loggerFactory = LogConfigurator.Configure("SwisschainProductName",
+                remoteSettingsConfig.RemoteSettingsUrls ?? Array.Empty<string>());
+
             var logger = loggerFactory.CreateLogger<Program>();
 
             try
@@ -39,12 +40,16 @@ namespace ServiceName
             }
         }
 
-        private static IHostBuilder CreateHostBuilder(ILoggerFactory loggerFactory, RemoteSettingsConfig remoteSettingsConfig) =>
-            new HostBuilder()
+        private static IHostBuilder CreateHostBuilder(ILoggerFactory loggerFactory,
+            RemoteSettingsConfig remoteSettingsConfig)
+        {
+            return new HostBuilder()
                 .SwisschainService<Startup>(options =>
                 {
                     options.UseLoggerFactory(loggerFactory);
-                    options.AddWebJsonConfigurationSources(remoteSettingsConfig.RemoteSettingsUrls ?? Array.Empty<string>());
+                    options.AddWebJsonConfigurationSources(remoteSettingsConfig.RemoteSettingsUrls ??
+                                                           Array.Empty<string>());
                 });
+        }
     }
 }

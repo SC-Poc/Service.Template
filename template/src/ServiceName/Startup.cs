@@ -1,16 +1,14 @@
-﻿using System;
-using MassTransit;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using ServiceName.Common.Configuration;
 using ServiceName.Common.Domain.AppFeatureExample;
-using ServiceName.Common.HostedServices;
 using ServiceName.Common.Persistence;
 using ServiceName.GrpcServices;
+using ServiceName.Messaging;
+using Swisschain.Extensions.EfCore;
 using Swisschain.Sdk.Server.Common;
 
 namespace ServiceName
@@ -26,30 +24,19 @@ namespace ServiceName
         {
             base.ConfigureServicesExt(services);
 
-            services.AddPersistence(Config.Db.ConnectionString);
-            services.AddAppFeatureExample();
-
-            services.AddMassTransit(x =>
-            {
-                // TODO: Register commands recipient endpoints. It's just an example.
-                EndpointConvention.Map<ExecuteSomething>(
-                    new Uri("queue:swisschain-product-name-swisschain-service-name-something-execution"));
-
-                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+            services
+                .AddPersistence(Config.Db.ConnectionString)
+                .AddAppFeatureExample()
+                .AddEfCoreDbValidation(options =>
                 {
-                    cfg.Host(Config.RabbitMq.HostUrl,
-                        host =>
-                        {
-                            host.Username(Config.RabbitMq.Username);
-                            host.Password(Config.RabbitMq.Password);
-                        });
-
-                    cfg.SetLoggerFactory(provider.Container.GetRequiredService<ILoggerFactory>());
-                }));
-
-                services.AddHostedService<BusHost>();
-
-            });
+                    options.UseDbContextFactory(factory =>
+                    {
+                        var builder = factory.GetRequiredService<DbContextOptionsBuilder<DatabaseContext>>();
+                        var context = new DatabaseContext(builder.Options);
+                        return context;
+                    });
+                })
+                .AddMessaging(Config.RabbitMq);
         }
 
         protected override void RegisterEndpoints(IEndpointRouteBuilder endpoints)

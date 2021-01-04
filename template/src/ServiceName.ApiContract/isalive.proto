@@ -5,13 +5,13 @@ option csharp_namespace = "Swisschain.SwisschainProductName.ServiceName.ApiContr
 package common;
 
 service Monitoring {
-	rpc IsAlive (IsAliveRequest) returns (IsAliveResponce);
+	rpc IsAlive (IsAliveRequest) returns (IsAliveResponse);
 }
 
 message IsAliveRequest {
 }
 
-message IsAliveResponce {
+message IsAliveResponse {
 	string name = 1;
 	string version = 2;
 	string startedAt = 3;

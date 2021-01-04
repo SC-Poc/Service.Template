@@ -3,7 +3,7 @@ using MassTransit;
 using Microsoft.Extensions.Logging;
 using ServiceName.Common.Domain.AppFeatureExample;
 
-namespace ServiceName.Worker.MessageConsumers
+namespace ServiceName.Worker.Messaging.Consumers
 {
     // TODO: Just an example
     public class ExecuteSomethingConsumer : IConsumer<ExecuteSomething>
