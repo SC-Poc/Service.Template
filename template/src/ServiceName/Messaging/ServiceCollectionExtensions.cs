@@ -1,4 +1,5 @@
-﻿using ServiceName.Common.Configuration;
+﻿using System;
+using ServiceName.Common.Configuration;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 using Swisschain.Extensions.MassTransit;
@@ -11,6 +12,10 @@ namespace ServiceName.Messaging
         {
             services.AddMassTransit(x =>
             {
+                var schedulerEndpoint = new Uri("queue:product-name-pulsar");
+
+                x.AddMessageScheduler(schedulerEndpoint);
+
                 x.UsingRabbitMq((context, cfg) =>
                 {
                     cfg.Host(rabbitMqConfig.HostUrl,
@@ -19,6 +24,8 @@ namespace ServiceName.Messaging
                             host.Username(rabbitMqConfig.Username);
                             host.Password(rabbitMqConfig.Password);
                         });
+
+                    cfg.UseMessageScheduler(schedulerEndpoint);
 
                     cfg.UseDefaultRetries(context);
                 });
