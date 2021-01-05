@@ -1,15 +1,27 @@
-﻿using Swisschain.SwisschainProductName.ServiceName.ApiClient.Common;
+﻿using System;
+using Grpc.Net.Client;
 using Swisschain.SwisschainProductName.ServiceName.ApiContract;
 
 namespace Swisschain.SwisschainProductName.ServiceName.ApiClient
 {
-    public class ServiceNameClient : BaseGrpcClient, IServiceNameClient
+    public class ServiceNameClient : IServiceNameClient, IDisposable
     {
-        public ServiceNameClient(string serverGrpcUrl) : base(serverGrpcUrl)
+        private readonly GrpcChannel _channel;
+
+        public ServiceNameClient(string serverGrpcUrl)
         {
-            Monitoring = new Monitoring.MonitoringClient(Channel);
+            AppContext.SetSwitch("System.Net.Http.SocketsHttpHandler.Http2UnencryptedSupport", true);
+
+            _channel = GrpcChannel.ForAddress(serverGrpcUrl);
+
+            Monitoring = new Monitoring.MonitoringClient(_channel);
         }
 
         public Monitoring.MonitoringClient Monitoring { get; }
+
+        public void Dispose()
+        {
+            _channel?.Dispose();
+        }
     }
 }

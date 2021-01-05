@@ -7,9 +7,9 @@ namespace ServiceName.GrpcServices
 {
     public class MonitoringService : Monitoring.MonitoringBase
     {
-        public override Task<IsAliveResponce> IsAlive(IsAliveRequest request, ServerCallContext context)
+        public override Task<IsAliveResponse> IsAlive(IsAliveRequest request, ServerCallContext context)
         {
-            var result = new IsAliveResponce
+            var result = new IsAliveResponse
             {
                 Name = ApplicationInformation.AppName,
                 Version = ApplicationInformation.AppVersion,

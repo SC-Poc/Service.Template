@@ -1,14 +1,11 @@
-﻿using System;
-using GreenPipes;
-using MassTransit;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using ServiceName.Common.Configuration;
 using ServiceName.Common.Domain.AppFeatureExample;
-using ServiceName.Common.HostedServices;
 using ServiceName.Common.Persistence;
-using ServiceName.Worker.MessageConsumers;
+using ServiceName.Worker.Messaging;
+using Swisschain.Extensions.EfCore;
 using Swisschain.Sdk.Server.Common;
 
 namespace ServiceName.Worker
@@ -24,38 +21,20 @@ namespace ServiceName.Worker
         {
             base.ConfigureServicesExt(services);
 
-            services.AddHttpClient();
-            services.AddPersistence(Config.Db.ConnectionString);
-            services.AddAppFeatureExample();
-            services.AddMessageConsumers();
-
-            services.AddMassTransit(x =>
-            {
-                x.AddBus(provider => Bus.Factory.CreateUsingRabbitMq(cfg =>
+            services
+                .AddHttpClient()
+                .AddPersistence(Config.Db.ConnectionString)
+                .AddEfCoreDbMigration(options =>
                 {
-                    cfg.Host(Config.RabbitMq.HostUrl, host =>
+                    options.UseDbContextFactory(factory =>
                     {
-                        host.Username(Config.RabbitMq.Username);
-                        host.Password(Config.RabbitMq.Password);
+                        var builder = factory.GetRequiredService<DbContextOptionsBuilder<DatabaseContext>>();
+                        var context = new DatabaseContext(builder.Options);
+                        return context;
                     });
-
-                    cfg.UseMessageRetry(y =>
-                        y.Exponential(5,
-                            TimeSpan.FromMilliseconds(100),
-                            TimeSpan.FromMilliseconds(10_000),
-                            TimeSpan.FromMilliseconds(100)));
-
-                    cfg.SetLoggerFactory(provider.Container.GetRequiredService<ILoggerFactory>());
-
-                    // TODO: Define your receive endpoints. It's just an example:
-                    cfg.ReceiveEndpoint("swisschain-product-name-swisschain-service-name-something-execution", e =>
-                    {
-                        e.Consumer(provider.Container.GetRequiredService<ExecuteSomethingConsumer>);
-                    });
-                }));
-
-                services.AddHostedService<BusHost>();
-            });
+                })
+                .AddAppFeatureExample()
+                .AddMessaging(Config.RabbitMq);
         }
     }
 }
