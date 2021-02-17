@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/aspnet:5.0.1
+FROM mcr.microsoft.com/dotnet/aspnet:5.0.3
 WORKDIR /app
 COPY . .
 ENTRYPOINT ["dotnet", "Swisschain.SwisschainProductName.ServiceName.Worker.dll"]
