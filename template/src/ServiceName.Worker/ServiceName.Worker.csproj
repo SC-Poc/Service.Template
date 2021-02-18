@@ -6,7 +6,7 @@
     <AssemblyName>Swisschain.SwisschainProductName.ServiceName.Worker</AssemblyName>
     <RootNamespace>ServiceName.Worker</RootNamespace>
     <UserSecretsId>worker-user-secrets-id</UserSecretsId>
-    <LangVersion>8.0</LangVersion>
+    <LangVersion>9.0</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>
